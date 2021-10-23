@@ -10,6 +10,24 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+<div class="row row-cols-1 row-cols-md-2 g-4">
+    @foreach (var item in Model)
+    {
+        <div class="col">
+            <div class="card restaurantCard">
+                <img src="@Html.DisplayFor(modelItem => item.ImagePath)" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h5>
+                    <p class="card-text">@Html.DisplayFor(modelItem => item.Address)</p>
+                    <p class="card-text">Rating: @Html.DisplayFor(modelItem => item.Rating)</p>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.RestaurantID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.RestaurantID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.RestaurantID })
+                </div>
+            </div>
+        </div>
+    }
+</div>
 
 <table class="table">
     <tr>

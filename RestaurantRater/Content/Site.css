@@ -27,3 +27,8 @@ textarea {
 .image-logo{
     max-height: 40px;
 }
+
+.restaurantCard:hover{
+    -webkit-box-shadow: 0 0 10px red;
+    box-shadow: 0 0 10px #fff;
+}
